@@ -1,0 +1,8 @@
+
+<?jelly escape-by-default="true"?>
+<j:jelly xmlns:j="jelly:core">
+  	<j:set var="violations" value="${it.getViolations(job)}"/>
+  	<td data="${violations != 'N/A' ? violations : '-1'}">
+  		${violations}
+  	</td>
+</j:jelly>

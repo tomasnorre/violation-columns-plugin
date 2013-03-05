@@ -1,0 +1,2 @@
+CheckstyleColumn.Configure.Header   =  Checkstyle
+CheckstyleColumn.Configure.Tooltip  =  Number of checkstyle violations

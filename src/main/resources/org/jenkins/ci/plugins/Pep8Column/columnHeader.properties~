@@ -1,0 +1,2 @@
+PMDColumn.Configure.Header   =  pep8
+PMDColumn.Configure.Tooltip  =  Number of pep8 violations

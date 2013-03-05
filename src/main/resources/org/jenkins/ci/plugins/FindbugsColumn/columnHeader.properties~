@@ -1,0 +1,2 @@
+FindbugsColumn.Configure.Header   =  Findbugs
+FindbugsColumn.Configure.Tooltip  =  Number of findbugs violations
