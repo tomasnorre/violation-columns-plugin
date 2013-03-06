@@ -15,7 +15,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	
-	<url></url>
+	<url>http://wiki.jenkins-ci.org/display/JENKINS/Violation+Columns+Plugin</url>
   	
   	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,9 +37,9 @@
   	</developers>
   	
   	<scm>
-    	<connection>  </connection>
-        <developerConnection></developerConnection>
-        <url>  </url>
+    	<connection> scm:git:ssh://github.com/jenkinsci/violation-columns-plugin.git </connection>
+        <developerConnection> scm:git:ssh://git@github.com/jenkinsci/violation-columns-plugin.git </developerConnection>
+        <url> https://github.com/jenkinsci/violation-columns-plugin </url>
     </scm> 
 	
 	<!-- get every artifact through repo.jenkins-ci.org, which proxies all the 
