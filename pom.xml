@@ -3,10 +3,10 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>1.500</version><!-- which version of Jenkins is this plugin built 
+		<version>1.398</version><!-- which version of Jenkins is this plugin built 
 			against? -->
 	</parent>
-	<name> Violation Columns(View with different Violations) </name>
+	<name> Violation Columns(List View columns) </name>
 	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>violation-columns</artifactId>
 	<version>1.1-SNAPSHOT</version>
