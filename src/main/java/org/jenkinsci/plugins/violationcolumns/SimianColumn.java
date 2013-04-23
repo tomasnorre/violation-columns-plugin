@@ -18,7 +18,7 @@ public final class SimianColumn extends ListViewColumn {
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Violations Simian";
+            return "Violations simian";
         }
 
         @Override

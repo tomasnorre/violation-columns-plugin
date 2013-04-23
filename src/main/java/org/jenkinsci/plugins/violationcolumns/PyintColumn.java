@@ -18,7 +18,7 @@ public final class PyintColumn extends ListViewColumn {
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Violations Pyint";
+            return "Violations pyint";
         }
 
         @Override
