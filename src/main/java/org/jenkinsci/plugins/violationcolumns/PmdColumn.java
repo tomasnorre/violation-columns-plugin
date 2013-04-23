@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -9,22 +9,22 @@ import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class CodenarcColumn extends ListViewColumn {
+public final class PmdColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class CodenarcColumnDescriptor extends
+    private static final class PmdColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Codenarc Violations";
+            return "Violations pmd";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new CodenarcColumn();
+            return new PmdColumn();
         }
 
         @Override
@@ -37,7 +37,7 @@ public final class CodenarcColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new CodenarcColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new PmdColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
@@ -46,6 +46,6 @@ public final class CodenarcColumn extends ListViewColumn {
     
    
     public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "codenarc");
+        return Utils.getViolations(job, "pmd");
     }
 }

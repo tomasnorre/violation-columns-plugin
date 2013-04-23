@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -9,22 +9,22 @@ import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class FxcopColumn extends ListViewColumn {
+public final class Pep8Column extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class FxcopColumnDescriptor extends
+    private static final class Pep8ColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Fxcop Violations";
+            return "Violations pep8";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new FxcopColumn();
+            return new Pep8Column();
         }
 
         @Override
@@ -37,7 +37,7 @@ public final class FxcopColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new FxcopColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new Pep8ColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
@@ -46,6 +46,6 @@ public final class FxcopColumn extends ListViewColumn {
     
    
     public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "fxcop");
+        return Utils.getViolations(job, "pep8");
     }
 }

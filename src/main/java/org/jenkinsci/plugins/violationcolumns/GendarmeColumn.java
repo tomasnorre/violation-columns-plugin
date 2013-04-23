@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -9,22 +9,22 @@ import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class SimianColumn extends ListViewColumn {
+public final class GendarmeColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class SimianColumnDescriptor extends
+    private static final class GendarmeColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Simian Violations";
+            return "Violations gendarme";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new SimianColumn();
+            return new GendarmeColumn();
         }
 
         @Override
@@ -37,7 +37,7 @@ public final class SimianColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new SimianColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new GendarmeColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
@@ -46,6 +46,6 @@ public final class SimianColumn extends ListViewColumn {
     
    
     public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "simian");
+        return Utils.getViolations(job, "gendarme");
     }
 }

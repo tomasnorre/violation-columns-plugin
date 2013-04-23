@@ -1,29 +1,30 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
+import hudson.model.Job;
 import hudson.views.ListViewColumnDescriptor;
 import hudson.views.ListViewColumn;
 import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class FailedTestsColumn extends ListViewColumn {
+public final class StylecopColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class FailedTestsColumnDescriptor extends
+    private static final class StylecopColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Failed Tests Count";
+            return "Violations stylecop";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new FailedTestsColumn();
+            return new StylecopColumn();
         }
 
         @Override
@@ -36,10 +37,15 @@ public final class FailedTestsColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new FailedTestsColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new StylecopColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
         return DESCRIPTOR;
+    }
+    
+   
+    public String getViolations(Job<?, ?> job) {
+        return Utils.getViolations(job, "stylecop");
     }
 }

@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.model.Job;
 import hudson.plugins.violations.hudson.AbstractViolationsProjectAction;

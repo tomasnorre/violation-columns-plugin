@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -9,22 +9,22 @@ import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class JslintColumn extends ListViewColumn {
+public final class CodenarcColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class JslintColumnDescriptor extends
+    private static final class CodenarcColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Jslint Violations";
+            return "Violations codenarc";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new JslintColumn();
+            return new CodenarcColumn();
         }
 
         @Override
@@ -37,7 +37,7 @@ public final class JslintColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new JslintColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new CodenarcColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
@@ -46,6 +46,6 @@ public final class JslintColumn extends ListViewColumn {
     
    
     public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "jslint");
+        return Utils.getViolations(job, "codenarc");
     }
 }

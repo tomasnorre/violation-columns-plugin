@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -18,7 +18,7 @@ public final class JcreportColumn extends ListViewColumn {
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Jcreport Violations";
+            return "Violations jcreport";
         }
 
         @Override

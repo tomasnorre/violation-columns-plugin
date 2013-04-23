@@ -6,7 +6,7 @@
 		<version>1.409</version><!-- which version of Jenkins is this plugin built 
 			against? -->
 	</parent>
-	<name> Violation Columns(List View columns) </name>
+	<name> Violation Columns(List View Columns) </name>
 	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>violation-columns</artifactId>
 	<version>1.4-SNAPSHOT</version>

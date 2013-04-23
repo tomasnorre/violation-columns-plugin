@@ -1,4 +1,4 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
@@ -9,22 +9,22 @@ import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class PyintColumn extends ListViewColumn {
+public final class SimianColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class PyintColumnDescriptor extends
+    private static final class SimianColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Pyint Violations";
+            return "Violations Simian";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new PyintColumn();
+            return new SimianColumn();
         }
 
         @Override
@@ -37,7 +37,7 @@ public final class PyintColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new PyintColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new SimianColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
@@ -46,6 +46,6 @@ public final class PyintColumn extends ListViewColumn {
     
    
     public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "pyint");
+        return Utils.getViolations(job, "simian");
     }
 }

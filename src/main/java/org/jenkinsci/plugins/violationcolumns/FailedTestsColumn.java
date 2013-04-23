@@ -1,30 +1,29 @@
-package org.jenkins.ci.plugins;
+package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
-import hudson.model.Job;
 import hudson.views.ListViewColumnDescriptor;
 import hudson.views.ListViewColumn;
 import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.StaplerRequest;
 
-public final class FindbugsColumn extends ListViewColumn {
+public final class FailedTestsColumn extends ListViewColumn {
 
     /**
      * The plugin descriptor.
      */
-    private static final class FindbugsColumnDescriptor extends
+    private static final class FailedTestsColumnDescriptor extends
             ListViewColumnDescriptor {
         @Override
         public String getDisplayName() {
-            return "Findbugs Violations";
+            return "Failed Tests Count";
         }
 
         @Override
         public ListViewColumn newInstance(final StaplerRequest request,
                 final JSONObject formData) throws FormException {
-            return new FindbugsColumn();
+            return new FailedTestsColumn();
         }
 
         @Override
@@ -37,15 +36,10 @@ public final class FindbugsColumn extends ListViewColumn {
      * The plugin descriptor.
      */
     @Extension
-    public static final Descriptor<ListViewColumn> DESCRIPTOR = new FindbugsColumnDescriptor();
+    public static final Descriptor<ListViewColumn> DESCRIPTOR = new FailedTestsColumnDescriptor();
 
     @Override
     public Descriptor<ListViewColumn> getDescriptor() {
         return DESCRIPTOR;
-    }
-    
-   
-    public String getViolations(Job<?, ?> job) {
-        return Utils.getViolations(job, "findbugs");
     }
 }
