@@ -9,7 +9,7 @@
 	<name> Violation Columns(List View Columns) </name>
 	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>violation-columns</artifactId>
-	<version>1.6</version>
+	<version>1.7-SNAPSHOT</version>
 	<packaging>hpi</packaging>
 	
 	<url>http://wiki.jenkins-ci.org/display/JENKINS/Violation+Columns+Plugin</url>
