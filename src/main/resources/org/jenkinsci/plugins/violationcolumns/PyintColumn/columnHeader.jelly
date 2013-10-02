@@ -1,6 +1,0 @@
-<?jelly escape-by-default="true"?>
-<j:jelly xmlns:j="jelly:core">
-  <th tooltip="${%PyintColumn.Configure.Tooltip}">
-    ${%PyintColumn.Configure.Header}
-  </th>
-</j:jelly>
