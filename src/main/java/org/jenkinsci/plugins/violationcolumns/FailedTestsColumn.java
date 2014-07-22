@@ -2,6 +2,9 @@ package org.jenkinsci.plugins.violationcolumns;
 
 import hudson.Extension;
 import hudson.model.Descriptor;
+import hudson.model.Job;
+import hudson.model.Run;
+import hudson.tasks.test.AbstractTestResultAction;
 import hudson.views.ListViewColumnDescriptor;
 import hudson.views.ListViewColumn;
 import net.sf.json.JSONObject;
@@ -9,6 +12,11 @@ import net.sf.json.JSONObject;
 import org.kohsuke.stapler.StaplerRequest;
 
 public final class FailedTestsColumn extends ListViewColumn {
+
+    public AbstractTestResultAction<?> getTestResultAction(Job<?,?> job) {
+        Run<?,?> b = job.getLastSuccessfulBuild();
+        return b != null ? b.getAction(AbstractTestResultAction.class) : null;
+    }
 
     /**
      * The plugin descriptor.

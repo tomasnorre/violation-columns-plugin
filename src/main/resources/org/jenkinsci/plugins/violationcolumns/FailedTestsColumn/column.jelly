@@ -1,7 +1,7 @@
 
 <?jelly escape-by-default="true"?>
 <j:jelly xmlns:j="jelly:core">
-	<j:set var="testAction" value="${job.lastSuccessfulBuild.testResultAction}"/>
+	<j:set var="testAction" value="${it.getTestResultAction(job)}"/>
 	<td data="${testAction != null ? testAction.failCount : '-1'}">	
 		${testAction != null ? testAction.failCount : 'N/A'}
 	</td>
